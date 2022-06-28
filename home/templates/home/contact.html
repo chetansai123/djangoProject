@@ -1,0 +1,41 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+Contact Us
+{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="https://source.unsplash.com/1600x600/?phones,contact" class="d-block w-100" alt="...">
+</div>
+<div class="container my-3">
+    <h1 align="center" style="color: darkorange;">Contact Us</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+            <div id="name" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">e-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+            <div id="email" class="form-text">Go for strong emails</div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+            <div id="phone" class="form-text">We'll never share your Phone Number with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Desc</label><br>
+            <textarea class="desc" id="desc" name="desc" rows="8" cols="150"></textarea>
+          </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+{% endblock body %}
